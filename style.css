@@ -1,0 +1,201 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(120deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #222;
+    min-height: 100vh;
+}
+
+/* Navigation Bar */
+#navbar {
+    background: #23272f;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+#navbar ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+}
+
+#navbar li {
+    margin: 0 24px;
+}
+
+#navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1em;
+    padding: 18px 0;
+    display: block;
+    transition: color 0.2s, border-bottom 0.2s;
+    border-bottom: 2px solid transparent;
+}
+
+#navbar a.active,
+#navbar a:hover {
+    color: #00bfae;
+    border-bottom: 2px solid #00bfae;
+}
+
+/* Main Layout */
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: 40px auto 0 auto;
+    gap: 24px;
+    padding: 0 16px;
+}
+
+/* Main Content */
+#main-content {
+    flex: 2;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    padding: 32px 28px;
+    min-width: 300px;
+    margin-bottom: 24px;
+    animation: fadeIn 1s;
+}
+
+#main-content header h1 {
+    color: #00bfae;
+    margin-bottom: 18px;
+    font-size: 2em;
+    font-weight: 700;
+}
+
+#main-content ul {
+    margin: 18px 0 18px 18px;
+    padding-left: 0;
+}
+
+#main-content li {
+    margin-bottom: 10px;
+    font-size: 1.05em;
+}
+
+/* Advertisement Section */
+#ad-space {
+    flex: 1;
+    min-width: 220px;
+    background: #eaf6fb;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.05);
+    padding: 28px 20px;
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 1.2s;
+}
+
+#ad-space h2 {
+    color: #0077b5;
+    margin-bottom: 16px;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.ad-box {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    padding: 16px 12px;
+    text-align: center;
+    border: 1px dashed #00bfae;
+}
+
+.ad-box a {
+    color: #00bfae;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.ad-box a:hover {
+    color: #0077b5;
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background: #23272f;
+    color: #fff;
+    text-align: center;
+    padding: 18px 0;
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    font-size: 1.05em;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.07);
+}
+
+.social-icons a {
+    color: #fff;
+    margin: 0 12px;
+    font-size: 2em;
+    vertical-align: middle;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.social-icons a[title="LinkedIn"]:hover {
+    color: #0077b5;
+    transform: scale(1.2);
+}
+
+.social-icons a[title="GitHub"]:hover {
+    color: #333;
+    transform: scale(1.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    #container {
+        flex-direction: column;
+        gap: 0;
+    }
+    #main-content, #ad-space {
+        margin-bottom: 18px;
+    }
+}
+
+@media (max-width: 600px) {
+    #main-content, #ad-space {
+        padding: 18px 8px;
+    }
+    #navbar ul {
+        flex-direction: column;
+    }
+    #navbar li {
+        margin: 0;
+    }
+    footer {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
